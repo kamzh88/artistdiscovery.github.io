@@ -9,8 +9,7 @@
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -33,7 +32,7 @@
           <div class="card-body">
 
             <!-- Here we create an HTML Form for handling the inputs-->
-            <form role="form">
+            <form >
 
               <!-- Here we create the text box for capturing the search term-->
               <div class="form-group">
@@ -52,16 +51,20 @@
               </div>
 
               <div class="form-group">
-                  <label for="end-year">End Date (Optional):</label>
-                  <input type="text" class="form-control" id="end-date">
-                </div>
+                <label for="end-year">End Date (Optional):</label>
+                <input type="text" class="form-control" id="end-date">
+              </div>
               <!-- Search Button -->
               <button type="submit" class="btn btn-default" id="submit-btn">
-                  <i class="fa fa-search"></i> Search</button>
-                <button class="btn btn-default" id="clear-results">
-                  <i class="fa fa-trash"></i> Clear Results</button>
+                <i class="fa fa-search"></i> Search</button>
+              <button class="btn btn-default" id="clear-results">
+                <i class="fa fa-trash"></i> Clear Results</button>
+            </form>
 
-          </div>
+            <script src="https://code.jquery.com/jquery-3.4.1.js"
+              integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+            <script type="text/javascript" src="apps.js"></script>
+
 </body>
 
 </html>
