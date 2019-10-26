@@ -38,18 +38,28 @@
               <!-- Here we create the text box for capturing the search term-->
               <div class="form-group">
                 <label for="search">Name of Artist:</label>
-                <input type="text" class="form-control" id="search-term">
+                <input type="text" class="form-control" id="artist-search">
               </div>
               <div class="form-group">
-                <label for="search"> City </label>
-                <input type="text" class="form-control" id="search-term">
+                <label for="search"> City (Optional): </label>
+                <input type="text" class="form-control" id="city-search">
               </div>
 
-              <!-- Here we capture the Start Year Parameter-->
+              <!-- Start Date-->
               <div class="form-group">
-                <label for="start-year"> Date </label>
-                <input type="text" class="form-control" id="start-year">
+                <label for="start-year"> Start Date (Optional): </label>
+                <input type="text" class="form-control" id="start-date">
               </div>
+
+              <div class="form-group">
+                  <label for="end-year">End Date (Optional):</label>
+                  <input type="text" class="form-control" id="end-date">
+                </div>
+              <!-- Search Button -->
+              <button type="submit" class="btn btn-default" id="submit-btn">
+                  <i class="fa fa-search"></i> Search</button>
+                <button class="btn btn-default" id="clear-results">
+                  <i class="fa fa-trash"></i> Clear Results</button>
 
           </div>
 </body>
