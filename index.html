@@ -1,52 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
-    <title>groupproj1</title> 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.js" 
-    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-</head>
-<body> 
 
-    <div class="container">
-<div class="jumbotron" style="background-color: rgb(127, 255, 244); border: 1px solide; text-align: center; font-family: cursive;; font-size: x-large; color:;" > Artist discover</div>
-<br> 
-<br>
-<div class="row">
-        <div class="col-sm-12">
-          <br>
-          
-          <div class="card">
-            <div class="card-header">
-              <strong>
-                <i class="fa fa-list-alt"></i> Search Parameters</strong>
-            </div>
-            <div class="card-body">
-  
-              <!-- Here we create an HTML Form for handling the inputs-->
-              <form role="form">
-  
-                <!-- Here we create the text box for capturing the search term-->
-                <div class="form-group">
-                  <label for="search">Search Artist:</label>
-                  <input type="text" class="form-control" id="search-term"> 
-                </div>
-                <div class="form-group">
-                        <label for="search"> locaction </label> 
-                        <input type="text" class="form-control" id="search-term"> 
-                      </div>
-                
-            
-   
-                <!-- Here we capture the Start Year Parameter-->
-                <div class="form-group">
-                  <label for="start-year"> date </label>
-                  <input type="text" class="form-control" id="start-year">
-                </div>
-  
-</div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>groupproj1</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="jumbotron"
+      style="background-color:whitesmoke; border: 1px solide; text-align: center; font-family: cursive;; font-size: 50px;">
+      Artist Discovery</div>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-sm-12">
+        <br>
+
+        <div class="card">
+          <div class="card-header">
+            <strong>
+              <i class="fa fa-list-alt"></i> Artist Search</strong>
+          </div>
+          <div class="card-body">
+
+            <!-- Here we create an HTML Form for handling the inputs-->
+            <form role="form">
+
+              <!-- Here we create the text box for capturing the search term-->
+              <div class="form-group">
+                <label for="search">Name of Artist:</label>
+                <input type="text" class="form-control" id="search-term">
+              </div>
+              <div class="form-group">
+                <label for="search"> City </label>
+                <input type="text" class="form-control" id="search-term">
+              </div>
+
+              <!-- Here we capture the Start Year Parameter-->
+              <div class="form-group">
+                <label for="start-year"> Date </label>
+                <input type="text" class="form-control" id="start-year">
+              </div>
+
+          </div>
 </body>
+
 </html>
