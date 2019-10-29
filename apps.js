@@ -19,11 +19,24 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET"
         }).then(function (TMData) {
+            //Looping though the array to append the name of the concert
+            for (var i = 0; i < TMData._embedded.events.length; i++) {
+                var tmSection = $('<div>');
+                tmSection.attr('id', 'infoSection' + i);
+                $('#tm-section').append(tmSection);
+                $('#infoSection' + i).append("<h3>" + TMData._embedded.events[i].name + "<h3>")
+            };
+            
             console.log((TMData));
             console.log(queryURL);
         })
 
     }
+
+
+
+
+
     function runItunes(queryURL) {
         //ajax call for itunes
         $.ajax({
@@ -41,18 +54,19 @@ $(document).ready(function () {
     }
 
     $('#submit-btn').on('click', function () {
+        $('#tm-section').empty();
         //Get search term for  Ticket Master
         event.preventDefault()
         queryTerm = $("#artist-search").val().trim();
         var newURL = queryURLBase + "&keyword=" + queryTerm;
         runTM(newURL);
 
-        var itunesUrl = "https://itunes.apple.com/search?term="+queryTerm;
-       
+        var itunesUrl = "https://itunes.apple.com/search?term=" + queryTerm;
+
         console.log(itunesUrl);
 
         runItunes(itunesUrl);
-        
+
 
     })
 
