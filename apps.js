@@ -9,7 +9,7 @@ $(document).ready(function () {
 
     //URL Base
     var queryURLBase = "https://app.ticketmaster.com/discovery/v2/events.json?size=10&apikey=" + tmAuthKey;
-    var queryURL = "https://itunes.apple.com/search?term=" + queryTerm;
+    // var queryURL = "https://itunes.apple.com/search?term=" + queryTerm;
 
 
     function runTM(queryURL) {
@@ -47,11 +47,14 @@ $(document).ready(function () {
             var response = JSON.parse(ITUNESData)
             console.log(response)
             for (let i = 0; i < 10; i++) {
-                console.log(response.results[i].artistName)
-                console.log(response.results[i].trackCensoredName)
+                console.log(response.results[i].trackName)
+                console.log(response.results[i].trackViewUrl)
+                
             }
         })
     }
+    //  var getSong= runItunes;
+    // $(".songs").append(getSong);
 
     $('#submit-btn').on('click', function () {
         $('#tm-section').empty();
