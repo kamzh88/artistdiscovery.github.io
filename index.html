@@ -45,15 +45,26 @@
               </div>
 
               <!-- Start Date-->
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label for="start-year"> Start Date (Optional): </label>
                 <input type="text" class="form-control" id="start-date">
-              </div>
+              </div> -->
+              <form action="/action_page.php">
+                Start Date:
+                <input type="date" name="startDate">
+              
+              </form>
 
-              <div class="form-group">
+              <form action="/action_page.php">
+                End Date:
+                <input type="date" name="endDate">
+              
+              </form>
+
+              <!-- <div class="form-group">
                 <label for="end-year">End Date (Optional):</label>
                 <input type="text" class="form-control" id="end-date">
-              </div>
+              </div> -->
               <!-- Search Button -->
               <button type="submit" class="btn btn-default" id="submit-btn">
                 <i class="fa fa-search"></i> Search</button>
@@ -64,7 +75,7 @@
 
             <div class="container">
               <div class="row"> 
-                <div id=name>Name</div>
+                <div id="name"></div>
                 <div id=picture>Picture</div>
               </div>
                 <div class="row">
@@ -72,7 +83,7 @@
                     <p>Ticketmaster</p>
                     <div id=tm-events></div>
                   </div>
-                  <div class="col-md">
+                  <div class="col-md" id="itunesInfo">
                     Itunes
                   </div>
                   

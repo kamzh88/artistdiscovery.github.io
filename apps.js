@@ -44,35 +44,40 @@ $(document).ready(function () {
             };
 
 
-            
             console.log((TMData));
             console.log(queryURL);
         })
 
     }
-
-
-
-
-
     function runItunes(queryURL) {
         //ajax call for itunes
         $.ajax({
             url: queryURL,
             method: "GET"
         }).then(function (ITUNESData) {
-            console.log("-------------------------\n\n\n")
+
             var response = JSON.parse(ITUNESData)
             console.log(response)
+            var name = response.results[0].artistName
+            var nameOfArtist = ("<div>" + name +"</div>");
+            
+            $("#name").append(nameOfArtist)
+            // console.log(nameOfArtist)
+
             for (let i = 0; i < 10; i++) {
-                console.log(response.results[i].trackName)
-                console.log(response.results[i].trackViewUrl)
-                
+                var itunesLog = $("<div>");
+                itunesLog.attr('id', 'ItunesSection' + i);
+                $("#itunesInfo").append(itunesLog);
+                $('#ItunesSection' + i).append("<h1>" + response.results[i].trackName + "<h1>")
+                $('#ItunesSection' + i).append("<a href=" + response.results[i].trackViewUrl + "> Preview </a>")
+
+                // console.log(response.results[i].trackName)
+                // console.log(response.results[i].trackViewUrl)
+
             }
         })
     }
-    //  var getSong= runItunes;
-    // $(".songs").append(getSong);
+
 
     $('#submit-btn').on('click', function () {
         $('#tm-section').empty();
@@ -93,25 +98,8 @@ $(document).ready(function () {
 
 
 
-    //  var artist="Lady Gaga"
 
-    //             var queryURL = "https://itunes.apple.com/search?term=" + artist;
-
-    //         $.ajax({
-    //             url: queryURL,
-    //             method: "GET"
-    //         }).then(function (ITUNESData) {
-    //             console.log(JSON.parse(ITUNESData));
-    //             var response= (JSON.parse(ITUNESData))
-    //             for (let i = 0; i < 10; i++) {
-    //                console.log (response.results[i].artistName)
-    //                console.log (response.results[i].trackCensoredName)
-
-
-
-    //     }
-    // })
-
+    
 
 })
 
