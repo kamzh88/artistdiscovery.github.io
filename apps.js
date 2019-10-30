@@ -19,13 +19,31 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET"
         }).then(function (TMData) {
+            // console.log(TMData._embedded.events[0]._embedded.venues[0].city.name);
             //Looping though the array to append the name of the concert
+
+            // for (var i = 0; i < TMData._embedded.events.length; i++) {
+            //     console.log(TMData._embedded.events[i]._embedded.venues[0].city.name);
+            // }
+
+
             for (var i = 0; i < TMData._embedded.events.length; i++) {
-                var tmSection = $('<div>');
-                tmSection.attr('id', 'infoSection' + i);
-                $('#tm-section').append(tmSection);
-                $('#infoSection' + i).append("<h3>" + TMData._embedded.events[i].name + "<h3>")
+                console.log(TMData._embedded.events[i].url);
+                
+                var eventCity = TMData._embedded.events[i]._embedded.venues[0].city.name;
+                var eventName = TMData._embedded.events[i].name;
+                var eventDate = TMData._embedded.events[i].dates.start.localDate;
+                var ticketURL = TMData._embedded.events[i].url;
+
+                $('#tm-events').append(eventName + "<br>");
+                $('#tm-events').append(eventCity + "<br>");
+                $('#tm-events').append(eventDate + "<br>");
+                $('#tm-events').append(ticketURL + "<br>");
+
+
             };
+
+
             
             console.log((TMData));
             console.log(queryURL);
