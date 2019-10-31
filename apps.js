@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
 
     var tmAuthKey = "zOsl8qw2cJozfhalFYHMmDpGBYjFaNfr";
@@ -11,7 +12,6 @@ $(document).ready(function () {
     var queryURLBase = "https://app.ticketmaster.com/discovery/v2/events.json?size=10&apikey=" + tmAuthKey;
     // var queryURL = "https://itunes.apple.com/search?term=" + queryTerm;
 
-
     function runTM(queryURL) {
 
         //ajax call for ticketmaster
@@ -19,33 +19,41 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET"
         }).then(function (TMData) {
-            // console.log(TMData._embedded.events[0]._embedded.venues[0].city.name);
-            //Looping though the array to append the name of the concert
 
-            // for (var i = 0; i < TMData._embedded.events.length; i++) {
-            //     console.log(TMData._embedded.events[i]._embedded.venues[0].city.name);
-            // }
-
+            var pictureURL = TMData._embedded.events[0].images[0].url
+            console.log(TMData);
+            console.log(queryURL);
 
             for (var i = 0; i < TMData._embedded.events.length; i++) {
-                console.log(TMData._embedded.events[i].url);
+
                 
+
+                if (TMData._embedded.events[i]._embedded.venues[0].state != undefined) {
+                    var eventState = TMData._embedded.events[i]._embedded.venues[0].state.stateCode
+                } else {
+                    var eventState = 'n/a'
+                }
                 var eventCity = TMData._embedded.events[i]._embedded.venues[0].city.name;
                 var eventName = TMData._embedded.events[i].name;
                 var eventDate = TMData._embedded.events[i].dates.start.localDate;
-                var ticketURL = TMData._embedded.events[i].url;
+                var eventTime = TMData._embedded.events[i].dates.start.localTime;
+                var ticketData = "<a href=" + TMData._embedded.events[i].url + "span class='buy-tag'>Buy Tickets!</a>";
 
-                $('#tm-events').append(eventName + "<br>");
-                $('#tm-events').append(eventCity + "<br>");
-                $('#tm-events').append(eventDate + "<br>");
-                $('#tm-events').append(ticketURL + "<br>");
-
-
+                $("#tm-events").append(`
+                    <p class='event-name'> ${eventName}</p>
+                         ${eventCity} , ${eventState}<br>
+                    Date: ${eventDate} Time: ${eventTime}<br>
+                    ${ticketData} <br><br><br>
+                    `)
             };
 
+            var artistImage = $('<img>').attr({
+                'src': pictureURL,
+                'class': 'gif'
+            })
 
-            console.log((TMData));
-            console.log(queryURL);
+            $('#picture').append(artistImage);
+
         })
 
     }
@@ -57,11 +65,10 @@ $(document).ready(function () {
         }).then(function (ITUNESData) {
 
             var response = JSON.parse(ITUNESData)
-            console.log(response)
+            // console.log(JSON.parse(ITUNESData));
             var name = response.results[0].artistName
-            var nameOfArtist = ("<div>" + name +"</div>");
-            
-            $("#name").append(nameOfArtist)
+            // var nameOfArtist = ("<div>" + name + "</div>");
+
             // console.log(nameOfArtist)
 
             for (let i = 0; i < 10; i++) {
@@ -80,26 +87,35 @@ $(document).ready(function () {
 
 
     $('#submit-btn').on('click', function () {
-        $('#tm-section').empty();
+
         //Get search term for  Ticket Master
         event.preventDefault()
         queryTerm = $("#artist-search").val().trim();
         var newURL = queryURLBase + "&keyword=" + queryTerm;
+
+        startDate = $("#start-date").val();
+        endDate = $("#end-date").val().trim();
+
+        console.log("#start-date");
+        console.log(startDate);
+        console.log("------------");
+        console.log("#end-date");
+        console.log(endDate);
+
+        // if (parseInt(startDate)) {
+
+        //     startDate = startDate +
+        // }
+
         runTM(newURL);
 
         var itunesUrl = "https://itunes.apple.com/search?term=" + queryTerm;
 
-        console.log(itunesUrl);
+        // console.log(itunesUrl);
 
         runItunes(itunesUrl);
 
-
     })
-
-
-
-
-    
 
 })
 
