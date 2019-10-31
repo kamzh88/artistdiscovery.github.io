@@ -89,9 +89,19 @@ $(document).ready(function () {
         })
     }
 
+    function clear() {
+        $('#itunesInfo').empty();
+        $('#picture').empty();
+        $('#name').empty();
+        $('#tm-events').empty();
+    }
+
+    $('.clear-btn').on('click', function () {
+        clear();
+    })
 
     $('#submit-btn').on('click', function () {
-
+        clear();
         //Get search term for  Ticket Master
         event.preventDefault()
         queryTerm = $("#artist-search").val().trim();
@@ -99,14 +109,6 @@ $(document).ready(function () {
 
         startDate = $("#start-date").val();
         endDate = $("#end-date").val().trim();
-
-        console.log("#start-date");
-        console.log(startDate);
-        console.log("------------");
-        console.log("#end-date");
-        console.log(endDate);
-
-        // *&startDateTime=2019-12-01T20:27:00Z&endDateTime=2020-01-31T20:27:00Z
 
         if (parseInt(startDate && endDate)) {
 
