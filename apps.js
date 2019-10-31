@@ -106,10 +106,15 @@ $(document).ready(function () {
         console.log("#end-date");
         console.log(endDate);
 
-        // if (parseInt(startDate)) {
+        // *&startDateTime=2019-12-01T20:27:00Z&endDateTime=2020-01-31T20:27:00Z
 
-        //     startDate = startDate +
-        // }
+        if (parseInt(startDate && endDate)) {
+
+            startDate = startDate + 'T09:00:00Z'
+            endDate = endDate + 'T00:00:00Z'
+
+            newURL = newURL + '*&startDateTime=' + startDate + '&endDateTime=' + endDate;
+        }
 
         runTM(newURL);
 
