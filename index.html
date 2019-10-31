@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>groupproj1</title>
-  <link rel="stylesheet" href="assets/style.css">
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
@@ -31,40 +31,19 @@
           </div>
           <div class="card-body">
 
+
             <form >
 
-        
+
+  
               <div class="form-group">
                 <label for="search">Name of Artist:</label>
                 <input type="text" class="form-control" id="artist-search">
               </div>
-              <div class="form-group">
-                <label for="search"> City (Optional): </label>
-                <input type="text" class="form-control" id="city-search">
-              </div>
 
-              <!-- Start Date-->
-              <!-- <div class="form-group">
-                <label for="start-year"> Start Date (Optional): </label>
-                <input type="text" class="form-control" id="start-date">
-              </div> -->
-              <form action="/action_page.php">
-                Start Date:
-                <input type="date" name="startDate">
-              
-              </form>
+              <p>Start Date (Optional): <input type="date" id="start-date"></p>
+              <p>End Date   (Optional): <input type="date" id="end-date"></p>
 
-              <form action="/action_page.php">
-                End Date:
-                <input type="date" name="endDate">
-              
-              </form>
-
-              <!-- <div class="form-group">
-                <label for="end-year">End Date (Optional):</label>
-                <input type="text" class="form-control" id="end-date">
-              </div> -->
-              <!-- Search Button -->
               <button type="submit" class="btn btn-default" id="submit-btn">
                 <i class="fa fa-search"></i> Search</button>
               <button class="btn btn-default" id="clear-results">
@@ -73,28 +52,28 @@
 
 
             <div class="container">
-              <div class="row"> 
+              <div class="row">
                 <div id="name"></div>
-                <div id=picture>Picture</div>
+                <div id=picture></div>
               </div>
-                <div class="row">
-                  <div class="col-md">
-                    <p>Ticketmaster</p>
-                    <div id=tm-events></div>
-                  </div>
-                  <div class="col-md" id="itunesInfo">
-                    Itunes
-                  </div>
-                  
+              <div class="row">
+                <div class="col-md">
+                  <p id="event-info">Event Information</p>
+                  <div id=tm-events></div>
                 </div>
+                <div class="col-md" id="itunesInfo">
+                  Itunes
+                </div>
+
               </div>
-
-
             </div>
 
-            <script src="https://code.jquery.com/jquery-3.4.1.js"
-              integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-            <script type="text/javascript" src="apps.js"></script>
+
+          </div>
+
+          <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+          <script type="text/javascript" src="apps.js"></script>
 
 </body>
 
