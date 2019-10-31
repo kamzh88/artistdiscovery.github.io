@@ -58,8 +58,8 @@ $(document).ready(function () {
 
             var response = JSON.parse(ITUNESData)
             console.log(response)
-            var name = response.results[0].artistName
-            var nameOfArtist = ("<div>" + name +"</div>");
+            // var name = response.results[0].artistName
+            var nameOfArtist = ("<div>" + queryTerm +"</div>");
             
             $("#name").append(nameOfArtist)
             // console.log(nameOfArtist)
@@ -70,6 +70,7 @@ $(document).ready(function () {
                 $("#itunesInfo").append(itunesLog);
                 $('#ItunesSection' + i).append("<h1>" + response.results[i].trackName + "<h1>")
                 $('#ItunesSection' + i).append("<a href=" + response.results[i].trackViewUrl + "> Preview </a>")
+                $('#ItunesSection' + i).append("<a href=" + response.results[i].artistViewUrl+ "> Artist Itunes Page </a>")
 
                 // console.log(response.results[i].trackName)
                 // console.log(response.results[i].trackViewUrl)
