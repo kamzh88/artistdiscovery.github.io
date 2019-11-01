@@ -27,27 +27,36 @@
             <strong>
               <i class="fa fa-list-alt"></i> Artist Search</strong>
           </div>
+
           <div class="card-body">
 
 
-            <form >
+            <form>
 
 
-  
+
               <div class="form-group">
                 <label for="search">Name of Artist:</label>
                 <input type="text" class="form-control" id="artist-search">
               </div>
 
               <p>Start Date (Optional): <input type="date" id="start-date"></p>
-              <p>End Date   (Optional): <input type="date" id="end-date"></p>
+              <p>End Date (Optional): <input type="date" id="end-date"></p>
 
-              <button type="submit" class="btn btn-default" id="submit-btn">
-                <i class="fa fa-search"> </i> Search</button>
+
+              <button type="submit" class="btn btn-primary" data-toggle="modal" 
+                id="submit-btn">
+                <i class="fa fa-search"></i> Search</button>
+             
+           
+
+
+              
          <button class="btn btn-default" id="clear-results">
                 <i class="clear-btn"></i> Clear Results</button>
             </form>
             <br> 
+
             <div class="container">
               <div class="row"> 
                 <div id="name"></div> <br>
@@ -76,6 +85,30 @@
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
           <script type="text/javascript" src="apps.js"></script>
 
+          <!-- Modal -->
+          <div class="modal " id="showModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Please Enter an Artist Name</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </html>

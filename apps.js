@@ -1,11 +1,12 @@
 
 $(document).ready(function () {
-
+  
     var tmAuthKey = "zOsl8qw2cJozfhalFYHMmDpGBYjFaNfr";
     var queryTerm = "";
     var city = "";
     var startDate = 0;
     var endDate = 0;
+    // var empty="";
 
 
     //URL Base
@@ -54,9 +55,9 @@ $(document).ready(function () {
 
             $('#picture').append(artistImage);
 
-        })
+        });
 
-    }
+    };
     function runItunes(queryURL) {
         //ajax call for itunes
         $.ajax({
@@ -67,12 +68,10 @@ $(document).ready(function () {
             var response = JSON.parse(ITUNESData)
 
             console.log(response)
-            // var name = response.results[0].artistName
             var nameOfArtist = ("<div>" + queryTerm +"</div>");
             
             $("#name").append(nameOfArtist)
 
-            // console.log(nameOfArtist)
 
             for (let i = 0; i < 10; i++) {
                 var itunesLog = $("<div>");
@@ -82,8 +81,6 @@ $(document).ready(function () {
                 $('#ItunesSection' + i).append("<a href=" + response.results[i].trackViewUrl + "> Preview </a>")
                 $('#ItunesSection' + i).append("<a href=" + response.results[i].artistViewUrl+ "> Artist Itunes Page </a>")
 
-                // console.log(response.results[i].trackName)
-                // console.log(response.results[i].trackViewUrl)
 
             }
         })
@@ -100,8 +97,15 @@ $(document).ready(function () {
         clear();
     })
 
+
+        
+        artistSearch = $('#artist-search').val().trim()
+        console.log(artistSearch)
+     
+       
     $('#submit-btn').on('click', function () {
         clear();
+
         //Get search term for  Ticket Master
         event.preventDefault()
         queryTerm = $("#artist-search").val().trim();
@@ -118,14 +122,29 @@ $(document).ready(function () {
             newURL = newURL + '*&startDateTime=' + startDate + '&endDateTime=' + endDate;
         }
 
-        runTM(newURL);
-
-        var itunesUrl = "https://itunes.apple.com/search?term=" + queryTerm;
-
+    
         // console.log(itunesUrl);
 
-        runItunes(itunesUrl);
+        
+        if(artistSearch !== ''){
+            console.log("runs")
+          
+            runTM(newURL);
 
+            var itunesUrl = "https://itunes.apple.com/search?term=" + queryTerm;
+    
+            
+    
+            runItunes(itunesUrl);
+
+    
+            
+        console.log("kkjkj");
+        } else {
+            $("#showModal").modal('show');
+                
+            }
+        
     })
 
 })

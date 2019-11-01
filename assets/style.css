@@ -38,3 +38,9 @@ body{background-image: url(https://i.pinimg.com/originals/04/1e/56/041e568ee34b8
     font-weight: bold;
 }
 
+
+.modal-backdrop {
+    display: none;
+}
+
+
