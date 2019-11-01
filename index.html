@@ -16,16 +16,14 @@
 
   <div class="container">
     <div class="jumbotron"
-      style="background-color:whitesmoke; border: 1px solide; text-align: center; font-family: cursive;; font-size: 50px;">
+      style="background-color:whitesmoke; border: 1px solide; text-align: center; font-family: cursive;; font-size: 50px; color: rgb(205, 152, 92);">
       Artist Discovery</div>
-    <br>
-    <br>
     <div class="row">
       <div class="col-sm-12">
         <br>
 
         <div class="card">
-          <div class="card-header">
+          <div class="card-header" id="ArtistSearch">
             <strong>
               <i class="fa fa-list-alt"></i> Artist Search</strong>
           </div>
@@ -45,29 +43,40 @@
               <p>Start Date (Optional): <input type="date" id="start-date"></p>
               <p>End Date (Optional): <input type="date" id="end-date"></p>
 
+
               <button type="submit" class="btn btn-primary" data-toggle="modal" 
                 id="submit-btn">
                 <i class="fa fa-search"></i> Search</button>
-              <button class="btn btn-default" id="clear-results">
-                <i class="fa fa-trash"></i> Clear Results</button>
+             
+           
+
+
+              
+         <button class="btn btn-default" id="clear-results">
+                <i class="clear-btn"></i> Clear Results</button>
             </form>
+            <br> 
 
             <div class="container">
-              <div class="row">
-                <div id="name"></div>
-                <div id=picture></div>
-              </div>
-              <div class="row">
-                <div class="col-md">
+              <div class="row"> 
+                <div id="name"></div> <br>
+                <div id="picture"></div>
+              </div> 
+              <br> 
+                <div class="row">
+                  <div class="col-md Tickemaster">
                   <p id="event-info">Event Information</p>
                   <div id=tm-events></div>
+                  </div> 
+                   <div class="col-md Itunes">
+                     <div id="itunesInfo">
+                    Itunes
+                     </div>
+                   </div> 
+       
                 </div>
-                <div class="col-md" id="itunesInfo">
-                  Itunes
-                </div>
+              
 
-              </div>
-            </div>
 
 
           </div>
