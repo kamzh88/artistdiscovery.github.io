@@ -21,8 +21,20 @@ body{background-image: url(https://i.pinimg.com/originals/04/1e/56/041e568ee34b8
 .Itunes { background-color: rgb(174, 238, 144); text-align: center; border:1px solid; margin: 2px;
 
 } 
-/* #Ticket{ display: inline;
 
-} */
+.buy-tag{
+    font-size: 20px;
+    font-weight: bold;
+}
 
+.gif{
+   width: 640px;
+   height: 427px;
+}
+
+.event-name{
+    font-size: 20px;
+    line-height: 0px;
+    font-weight: bold;
+}
 
