@@ -1,6 +1,28 @@
 .container{background-color:whitesmoke;
 opacity:.90;}
-html{background: grey}
+
 body{background-image: url(https://i.pinimg.com/originals/04/1e/56/041e568ee34b82e501f532d972dcbcff.jpg)}
 
-.card-body{background-color:whitesmoke}
+.card-body{background-color:whitesmoke;}  
+
+.card{ font-family: 'Times New Roman', Times, serif; font-size: 4vmin;
+
+}  
+
+#ArtistSearch { background-color: rgb(174, 238, 144); text-align: center; font-family: serif;
+
+}
+#submit-btn { background-color: rgb(205, 152, 92); border: 1px solid;
+
+} 
+.Tickemaster { background-color: rgb(174, 238, 144); text-align: center;border: 1px solid; margin: 2px;
+
+} 
+.Itunes { background-color: rgb(174, 238, 144); text-align: center; border:1px solid; margin: 2px;
+
+} 
+/* #Ticket{ display: inline;
+
+} */
+
+
