@@ -97,14 +97,10 @@ $(document).ready(function () {
         clear();
     })
 
-
-        
-        artistSearch = $('#artist-search').val().trim()
-        console.log(artistSearch)
-     
-       
     $('#submit-btn').on('click', function () {
         clear();
+        artistSearch = $('#artist-search').val().trim()
+        console.log(artistSearch)
 
         //Get search term for  Ticket Master
         event.preventDefault()
