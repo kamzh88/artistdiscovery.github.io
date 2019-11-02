@@ -57,12 +57,17 @@ $(document).ready(function () {
     };
     function runItunes(queryURL) {
         //ajax call for itunes
+
         $.ajax({
-            url: queryURL,
-            method: "GET"
+            url: "https://enigmatic-beyond-33445.herokuapp.com/cors",
+            data: {
+                url: queryURL,
+                key: "6a00bee3031c82ad63a1aae5555a6e3b"
+            },
+            method: "POST"
         }).then(function (ITUNESData) {
 
-            var response = JSON.parse(ITUNESData)
+            var response = ITUNESData;
 
             console.log(response)
             var nameOfArtist = ("<div>" + queryTerm +"</div>");
