@@ -3,14 +3,13 @@ $(document).ready(function () {
   
     var tmAuthKey = "zOsl8qw2cJozfhalFYHMmDpGBYjFaNfr";
     var queryTerm = "";
-    var city = "";
     var startDate = 0;
     var endDate = 0;
-    // var empty="";
+    var limitMusic = "&locale=*&classificationName=music";
 
 
     //URL Base
-    var queryURLBase = "https://app.ticketmaster.com/discovery/v2/events.json?size=10&apikey=" + tmAuthKey;
+    var queryURLBase = "https://app.ticketmaster.com/discovery/v2/events.json?size=10&apikey=" + tmAuthKey + limitMusic;
     // var queryURL = "https://itunes.apple.com/search?term=" + queryTerm;
 
     function runTM(queryURL) {
@@ -21,13 +20,11 @@ $(document).ready(function () {
             method: "GET"
         }).then(function (TMData) {
 
-            var pictureURL = TMData._embedded.events[0].images[0].url
+            var pictureURL = TMData._embedded.events[0].images[3].url
             console.log(TMData);
             console.log(queryURL);
 
             for (var i = 0; i < TMData._embedded.events.length; i++) {
-
-                
 
                 if (TMData._embedded.events[i]._embedded.venues[0].state != undefined) {
                     var eventState = TMData._embedded.events[i]._embedded.venues[0].state.stateCode
@@ -44,7 +41,7 @@ $(document).ready(function () {
                     <p class='event-name'> ${eventName}</p>
                          ${eventCity} , ${eventState}<br>
                     Date: ${eventDate} Time: ${eventTime}<br>
-                    ${ticketData} <br><br><br>
+                    ${ticketData} <br><br>
                     `)
             };
 
@@ -69,10 +66,10 @@ $(document).ready(function () {
 
             console.log(response)
             var nameOfArtist = ("<div>" + queryTerm +"</div>");
+            var upperCase = nameOfArtist.toUpperCase();
+            $(nameOfArtist).append(upperCase)
+            $("#name").append(upperCase);
             
-            $("#name").append(nameOfArtist)
-
-
             for (let i = 0; i < 10; i++) {
                 var itunesLog = $("<div>");
                 itunesLog.attr('id', 'ItunesSection' + i);
@@ -129,13 +126,8 @@ $(document).ready(function () {
 
             var itunesUrl = "https://itunes.apple.com/search?term=" + queryTerm;
     
-            
-    
             runItunes(itunesUrl);
 
-    
-            
-        console.log("kkjkj");
         } else {
             $("#showModal").modal('show');
                 

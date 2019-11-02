@@ -6,14 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>groupproj1</title>
-
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
-
   <div class="container">
     <div class="jumbotron"
       style="background-color:whitesmoke; border: 1px solide; text-align: center; font-family: cursive;; font-size: 50px; color: rgb(205, 152, 92);">
@@ -21,52 +19,38 @@
     <div class="row">
       <div class="col-sm-12">
         <br>
-
         <div class="card">
           <div class="card-header" id="ArtistSearch">
             <strong>
               <i class="fa fa-list-alt"></i> Artist Search</strong>
           </div>
-
           <div class="card-body">
-
-
             <form>
-
-
-
               <div class="form-group">
                 <label for="search">Name of Artist:</label>
                 <input type="text" class="form-control" id="artist-search">
               </div>
-
               <p>Start Date (Optional): <input type="date" id="start-date"></p>
               <p>End Date (Optional): <input type="date" id="end-date"></p>
-
-
-              <button type="submit" class="btn btn-primary" data-toggle="modal" 
-                id="submit-btn">
+              <button type="submit" class="btn btn-primary" data-toggle="modal" id="submit-btn">
                 <i class="fa fa-search"></i> Search</button>
-             
-           
-
-
-              
-         <button class="btn btn-default" id="clear-results">
+              <button class="btn btn-default" id="clear-results">
                 <i class="clear-btn"></i> Clear Results</button>
             </form>
-            <br> 
-
+            <br>
             <div class="container">
-              <div class="row"> 
-                <div id="name"></div> <br>
+              <div class="row">
+                <div id="name"></div>
+              </div>
+              <div class="row">
                 <div id="picture"></div>
-              </div> 
-              <br> 
-                <div class="row">
-                  <div class="col-md Tickemaster">
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md Tickemaster">
                   <p id="event-info">Event Information</p>
                   <div id=tm-events></div>
+
                   </div> 
                    <div class="col-md Itunes">
                       <p id="song-info">Songs/Artist Itunes Page</p>
@@ -75,37 +59,35 @@
                      </div>
                    </div> 
        
+
                 </div>
-              
-
-
-
-          </div>
-
-          <script src="https://code.jquery.com/jquery-3.4.1.js"
-            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-          <script type="text/javascript" src="apps.js"></script>
-
-          <!-- Modal -->
-          <div class="modal " id="showModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Please Enter an Artist Name</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
+                <div class="col-md Itunes">
+                  <div id="itunesInfo">
+                    Itunes
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-
+            <script src="https://code.jquery.com/jquery-3.4.1.js"
+              integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+            <script type="text/javascript" src="apps.js"></script>
+            <!-- Modal -->
+            <div class="modal " id="showModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Please Enter an Artist Name</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
   integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
