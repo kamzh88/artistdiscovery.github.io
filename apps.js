@@ -78,8 +78,8 @@ $(document).ready(function () {
                 itunesLog.attr('id', 'ItunesSection' + i);
                 $("#itunesInfo").append(itunesLog);
                 $('#ItunesSection' + i).append("<h1>" + response.results[i].trackName + "<h1>")
-                $('#ItunesSection' + i).append("<a href=" + response.results[i].trackViewUrl + "> Preview </a>")
-                $('#ItunesSection' + i).append("<a href=" + response.results[i].artistViewUrl+ "> Artist Itunes Page </a>")
+                $('#ItunesSection' + i).append("<a href=" + response.results[i].trackViewUrl + "span class='song-preview'> Preview Song <br> </a>")
+                $('#ItunesSection' + i).append("<a href=" + response.results[i].artistViewUrl+ "span class='itunes-page'> Artist Itunes Page </a>")
 
 
             }
