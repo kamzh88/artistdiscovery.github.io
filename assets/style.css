@@ -55,6 +55,14 @@ body{background-image: url(https://i.pinimg.com/originals/04/1e/56/041e568ee34b8
     font-weight: bold;
 }
 
+.song-preview{
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+
+
 #picture {
     padding: 10px;
     width: 1100px;
